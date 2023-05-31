@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import {AppRegistry} from 'react-native';
+import {name as appName} from './app.json';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import App from './src/App'
+import { FeedProvider } from "./src/data/contexts/FeedContext"
+import { UserProvider } from "./src/data/contexts/UserContext"
+import { EventProvider } from "./src/data/contexts/EventContext"
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import axios from 'axios'
+
+axios.defaults.baseURL='https://instaclone-b78e8-default-rtdb.firebaseio.com/'
+
+const Root = () => (
+    <EventProvider>
+        <UserProvider>
+            <FeedProvider>
+                <App/>
+            </FeedProvider>
+        </UserProvider>
+    </EventProvider>
+)
+
+AppRegistry.registerComponent(appName, () => Root);
