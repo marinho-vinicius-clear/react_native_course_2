@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
-import Header from '../componentes/Header'
-import Post from '../componentes/Post'
+import Header from '../components/Header'
+import Post from '../components/Post'
 
 import useFeed from '../data/hooks/useFeed'
 

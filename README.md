@@ -94,3 +94,5 @@ firebase init
   }
 }
 ```
+
+cloud function doesn't work needs payment plan
