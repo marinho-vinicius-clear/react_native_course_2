@@ -10,7 +10,7 @@ import { EventProvider } from "./src/data/contexts/EventContext"
 
 import axios from 'axios'
 
-axios.defaults.baseURL='https://instaclone-b78e8-default-rtdb.firebaseio.com/'
+axios.defaults.baseURL='https://instaclone-4b63b-default-rtdb.firebaseio.com/'
 
 const Root = () => (
     <EventProvider>
